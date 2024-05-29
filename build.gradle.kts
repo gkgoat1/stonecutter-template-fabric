@@ -15,6 +15,9 @@ class ModData {
 val mod = ModData()
 val mcVersion = stonecutter.current.version
 val mcDep = property("mod.mc_dep").toString()
+val javaVersion = property("deps.java_version").toString().toInt()
+
+
 
 version = "${mod.id}.v+$mcVersion"
 group = mod.group
@@ -69,6 +72,7 @@ yamlang {
 
 java {
     withSourcesJar()
+
 }
 
 tasks.processResources {
